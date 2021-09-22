@@ -1,0 +1,350 @@
+$black: #222;
+$black1: #243141;
+$blue: #007aff;
+$blue1: #1e1d79;
+$blue2: #506bf0;
+$gray: #8a94a6;
+$green: #25744e;
+$pink: #db5db4;
+$purple: #6828b3;
+$red: #681313;
+$skyblue: #72bee3;
+$white: #fff;
+
+//background-image: linear-gradient(270deg, #f8f9fb, #f8f9fb 70%, transparent 0, transparent);
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: $black1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16.5px;
+    font-weight: 400;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* 
+    --------------------------------
+            MIXINS       
+    --------------------------------    
+*/
+
+
+.noselect {   
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+@mixin flexbox() {    
+    align-items: center;
+    display: flex;    
+}
+
+@mixin flexbox-center() {    
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+/* 
+    --------------------------------
+            CONTAINER
+    --------------------------------    
+*/
+
+.container {    
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 768px) {    
+        width: 750px;    
+    }
+
+    @media (min-width: 992px) {        
+        width: 970px;    
+    }
+  
+    @media (min-width: 1200px) {    
+        width: 1170px;
+    }
+}
+
+/* 
+    --------------------------------
+            Estilos Generales       
+    --------------------------------
+*/
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    li {
+        list-style: none;
+    }
+}
+
+h1 {    
+    font-size: 3em;
+    font-weight: 500;
+}
+
+h2 {    
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
+p {
+    color: $gray; 
+    letter-spacing: 0.5px;
+}
+
+img {
+    max-width: 100%;
+}
+
+span {
+    &.keyword-blue {
+        color: $blue2;
+    }
+
+    &.keyword-white {
+        color: $white;
+    }
+
+    &.keyword-black {
+        color: $black1;
+    }
+}
+
+.light-color {
+    color: $black1;
+}
+
+.dark-color {
+    color: $white;
+}
+
+.bg-white {
+    background-color: $white;
+}
+
+.bg-green {
+    background-color: $green;
+}
+
+.bg-blue {
+    background-color: $blue1;
+}
+
+.bg-skyblue {
+    background-color: $skyblue;
+}
+
+.bg-red {
+    background-color: $red;
+}
+
+/* 
+    --------------------------------
+            ESTILOS HEADER       
+    --------------------------------
+*/
+
+header {
+    background-color: transparent;
+    position: fixed;
+    width: 100vw;
+    z-index: 99;
+}
+
+.navbar-container { 
+    padding-top: 36px;   
+
+    &.navbar-container-desktop {
+        @include flexbox-center();        
+    }
+
+    nav.nav-links {
+        ul{
+            @include flexbox();            
+
+            li {
+                margin: 0 15px;
+
+                a {
+                    background-color: transparent;
+                    color: lighten($black1, 15%);
+                    //color: $white;
+                    font-weight: 600;
+                    transition: color 1s;
+
+                    &:hover {
+                        color: $blue2;
+                    }
+                }
+            }
+        }        
+    }
+}
+
+.header-logo {    
+    span {
+        color: $blue2;
+        //color: $white;
+        font-family: 'Red Hat Text', sans-serif;
+        font-size: 1.5em;
+        font-weight: 600;
+    }    
+}
+
+/* 
+    --------------------------------
+            ESTILOS FOOTER
+    --------------------------------
+*/
+
+footer {        
+    width: 100vw;
+    
+    .footer-container {
+        padding: 40px 0 20px;
+    }
+
+    .primary-footer {
+        @include flexbox-center();
+        padding: 10px 0 20px 0;
+
+        .footer-logo {
+            width: 40%;
+
+            span {
+                color: $blue2;                
+                font-family: 'Red Hat Text', sans-serif;
+                font-size: 1.3em;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 0.8em;
+                line-height: 1.75;
+                margin: 1em 0 0;
+            }
+        }
+
+        .menu-footer {
+            span {
+                font-size: 0.85em;
+                font-weight: bold;                
+            }
+
+            ul {
+                margin: 1em 0 0;
+
+                li {
+                    margin: 0 0 0.5em;
+
+                    a {
+                        color: $gray;
+                        font-size: 0.85em;    
+                        transition: color 0.5s;
+                        
+                        &:hover {
+                            color: $blue2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .secondary-footer {
+        .footer-copyright {
+            color: $gray;
+            border-top: 1px solid rgba(146, 155, 172, 0.2);
+            font-size: .8em;
+            padding: 40px 0 30px 0;
+        }
+    }
+}
+
+
+/* 
+    --------------------------------
+            Estilos para Heros
+    --------------------------------
+*/
+
+.hero-section {
+    //border: 5px solid $green;    
+    //background-color: $blue2;
+
+    &.hero-section-home {
+        align-items: center;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        width: 100vw;        
+    }
+
+    .hero-content-wrapper {
+        width: 70%;
+
+        &.hero-content-wrapper-center {
+            text-align: center;
+        }
+    }
+
+    .hero-heading {
+        margin: 0 0 2em;
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+    }
+
+    .hero-subheading {
+        p {
+            font-size: 1.2em;
+        }
+    }
+}
+
+.section-book-feature {
+    background: linear-gradient(180deg, $blue1 70%, $white 30%);
+    padding: 100px 0 50px;
+
+    .list-featured-books {
+        @include flexbox();       
+        justify-content: space-around;
+
+        .book {
+            width: 20%;
+
+            .book-content {
+                span {
+                    color: $gray;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300;400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: #243141;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16.5px;
+  font-weight: 400;
+  max-width: 100vw;
+  overflow-x: hidden; }
+
+/* 
+    --------------------------------
+            MIXINS       
+    --------------------------------    
+*/
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */ }
+
+/* 
+    --------------------------------
+            CONTAINER
+    --------------------------------    
+*/
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: auto;
+  margin-right: auto; }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px; } }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px; } }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px; } }
+
+/* 
+    --------------------------------
+            Estilos Generales       
+    --------------------------------
+*/
+a {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+h1 {
+  font-size: 3em;
+  font-weight: 500; }
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 500; }
+
+p {
+  color: #8a94a6;
+  letter-spacing: 0.5px; }
+
+img {
+  max-width: 100%; }
+
+span.keyword-blue {
+  color: #506bf0; }
+
+span.keyword-white {
+  color: #fff; }
+
+span.keyword-black {
+  color: #243141; }
+
+.light-color {
+  color: #243141; }
+
+.dark-color {
+  color: #fff; }
+
+.bg-white {
+  background-color: #fff; }
+
+.bg-green {
+  background-color: #25744e; }
+
+.bg-blue {
+  background-color: #1e1d79; }
+
+.bg-skyblue {
+  background-color: #72bee3; }
+
+.bg-red {
+  background-color: #681313; }
+
+/* 
+    --------------------------------
+            ESTILOS HEADER       
+    --------------------------------
+*/
+header {
+  background-color: transparent;
+  position: fixed;
+  width: 100vw;
+  z-index: 99; }
+
+.navbar-container {
+  padding-top: 36px; }
+  .navbar-container.navbar-container-desktop {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between; }
+  .navbar-container nav.nav-links ul {
+    align-items: center;
+    display: flex; }
+    .navbar-container nav.nav-links ul li {
+      margin: 0 15px; }
+      .navbar-container nav.nav-links ul li a {
+        background-color: transparent;
+        color: #3f5672;
+        font-weight: 600;
+        transition: color 1s; }
+        .navbar-container nav.nav-links ul li a:hover {
+          color: #506bf0; }
+
+.header-logo span {
+  color: #506bf0;
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 1.5em;
+  font-weight: 600; }
+
+/* 
+    --------------------------------
+            ESTILOS FOOTER
+    --------------------------------
+*/
+footer {
+  width: 100vw; }
+  footer .footer-container {
+    padding: 40px 0 20px; }
+  footer .primary-footer {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 10px 0 20px 0; }
+    footer .primary-footer .footer-logo {
+      width: 40%; }
+      footer .primary-footer .footer-logo span {
+        color: #506bf0;
+        font-family: 'Red Hat Text', sans-serif;
+        font-size: 1.3em;
+        font-weight: 600; }
+      footer .primary-footer .footer-logo p {
+        font-size: 0.8em;
+        line-height: 1.75;
+        margin: 1em 0 0; }
+    footer .primary-footer .menu-footer span {
+      font-size: 0.85em;
+      font-weight: bold; }
+    footer .primary-footer .menu-footer ul {
+      margin: 1em 0 0; }
+      footer .primary-footer .menu-footer ul li {
+        margin: 0 0 0.5em; }
+        footer .primary-footer .menu-footer ul li a {
+          color: #8a94a6;
+          font-size: 0.85em;
+          transition: color 0.5s; }
+          footer .primary-footer .menu-footer ul li a:hover {
+            color: #506bf0; }
+  footer .secondary-footer .footer-copyright {
+    color: #8a94a6;
+    border-top: 1px solid rgba(146, 155, 172, 0.2);
+    font-size: .8em;
+    padding: 40px 0 30px 0; }
+
+/* 
+    --------------------------------
+            Estilos para Heros
+    --------------------------------
+*/
+.hero-section.hero-section-home {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw; }
+
+.hero-section .hero-content-wrapper {
+  width: 70%; }
+  .hero-section .hero-content-wrapper.hero-content-wrapper-center {
+    text-align: center; }
+
+.hero-section .hero-heading {
+  margin: 0 0 2em; }
+  .hero-section .hero-heading h1 {
+    font-size: 3.5em;
+    font-weight: 600;
+    line-height: 1.1; }
+
+.hero-section .hero-subheading p {
+  font-size: 1.2em; }
+
+.section-book-feature {
+  background: linear-gradient(180deg, #1e1d79 70%, #fff 30%);
+  padding: 100px 0 50px; }
+  .section-book-feature .list-featured-books {
+    align-items: center;
+    display: flex;
+    justify-content: space-around; }
+    .section-book-feature .list-featured-books .book {
+      width: 20%; }
+      .section-book-feature .list-featured-books .book .book-content span {
+        color: #8a94a6; }
